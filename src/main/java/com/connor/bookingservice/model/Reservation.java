@@ -19,7 +19,6 @@ import java.time.LocalDate;
 public class Reservation {
 
     public enum Status {
-        PENDING,    // holds the dates briefly (useful for payment flows / lock TTL practice)
         CONFIRMED,
         CANCELLED
     }
@@ -47,7 +46,7 @@ public class Reservation {
     @Setter
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Status status = Status.PENDING;
+    private Status status = Status.CONFIRMED;
 
     @Version
     private Long version;
